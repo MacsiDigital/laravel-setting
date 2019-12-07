@@ -1,0 +1,58 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateSettingTables extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $tableNames = config('setting.table_names');
+
+        Schema::create($tableNames['groups'], function (Blueprint $table) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
+            $table->bigIncrements('id');
+            $table->string('identifier');
+            $table->string('name');
+            $table->string('description');
+            $table->boolean('autoload')->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create($tableNames['items'], function (Blueprint $table) use ($tableNames) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('setting_group_id')->nullable();
+            $table->string('name');
+            $table->text('description');
+            $table->string('key');
+            $table->text('value')->nullable();
+            $table->boolean('autoload')->default(false);
+            $table->timestamps();
+
+            $table->foreign('setting_group_id')->references('id')->on($tableNames['groups'])->onUpdate('cascade')->onDelete('cascade');
+        });
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $tableNames = config('setting.table_names');
+
+        Schema::dropIfExists($tableNames['groups']);
+        Schema::dropIfExists($tableNames['items']);
+    }
+}

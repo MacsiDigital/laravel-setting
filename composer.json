@@ -1,0 +1,54 @@
+{
+    "name": "macsidigital/laravel-setting",
+    "description": "",
+    "keywords": [
+        "macsidigital",
+        "laravel-setting"
+    ],
+    "homepage": "https://github.com/macsidigital/laravel-setting",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Colin Hall",
+            "email": "colin@macsi.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Setting\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Setting\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "setting": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Setting\\Providers\\SettingServiceProvider"
+            ],
+            "aliases": {
+                "SettingItem": "Setting\\Facades\\SettingItem",
+                "SettingGroup": "Setting\\Facades\\SettingGroup"
+            }
+        }
+    }
+}
