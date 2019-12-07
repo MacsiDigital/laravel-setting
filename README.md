@@ -82,4 +82,4 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## License
 
-This is copyrighted and cannnot be reused without permission.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
