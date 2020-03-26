@@ -3,7 +3,6 @@
 namespace Setting;
 
 use Setting\Contracts\Group as Contract;
-use Setting\Item;
 use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model implements Contract
@@ -16,7 +15,7 @@ class Group extends Model implements Contract
 
     public function items()
     {
-        return $this->hasMany(Item::class, 'setting_group_id');
+        return $this->hasMany(config('setting.models.item'), 'setting_group_id');
     }
 
 }

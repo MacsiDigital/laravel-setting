@@ -24,7 +24,7 @@ class SettingServiceProvider extends ServiceProvider
                 __DIR__.'/../../config/setting.php' => config_path('setting.php'),
             ], 'config');
 
-            $this->publishes($this->getMigrationStubs(), 'setting-migrations');
+            $this->publishes($this->getMigrationStubs(), 'migrations');
         }
 
         $this->registerModelBindings();

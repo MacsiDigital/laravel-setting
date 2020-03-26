@@ -16,7 +16,7 @@ class Item extends Model implements Contract
 
     public function group()
     {
-        return $this->belongsTo(Group::class, 'setting_group_id');
+        return $this->belongsTo(config('setting.models.group'), 'setting_group_id');
     }
 
 }
