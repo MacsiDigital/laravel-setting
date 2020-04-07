@@ -3,9 +3,9 @@
 return [
     'models' => [
 
-        'group' => Setting\SettingGroup::class,
+        'group' => Setting\Group::class,
 
-        'item' => Setting\SettingItem::class,
+        'item' => Setting\Item::class,
 
     ],
     'table_names' => [
