@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-setting` will be documented in this file
 
+## 1.0.6 - 2020-04-07
+
+- Allow PHP 7.2
+
 ## 1.0.5 - 2020-04-07
 
 - Update docs
