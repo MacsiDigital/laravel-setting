@@ -1,6 +1,6 @@
 # Laravel Setting Package
 
-## Configs in the databsae
+## Configs in the database
 
 ![Header Image](https://github.com/MacsiDigital/repo-design/raw/master/laravel-setting/header.png)
 
