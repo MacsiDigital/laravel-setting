@@ -1,22 +1,20 @@
 <?php
 
-namespace Setting;
+namespace Setting\Models;
 
-use Setting\Contracts\Item as Contract;
-use Setting\Group;
 use Illuminate\Database\Eloquent\Model;
+use Setting\Contracts\Item as Contract;
 
 class Item extends Model implements Contract
 {
-	protected $table = 'setting_items';
+    protected $table = 'setting_items';
 
     protected $fillable = [
-        'name', 'description', 'key', 'value'
+        'name', 'description', 'key', 'value',
     ];
 
     public function group()
     {
         return $this->belongsTo(config('setting.models.group'), 'setting_group_id');
     }
-
 }

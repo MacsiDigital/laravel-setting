@@ -4,5 +4,5 @@ namespace Setting\Contracts;
 
 interface Group
 {
-	public function items();
+    public function items();
 }

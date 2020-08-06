@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-setting` will be documented in this file
 
+## 1.0.7 - 2020-04-07
+
+- Models into Models folder
+- GitHub Actions for tests and format
+- Updated Docs
+
 ## 1.0.6 - 2020-04-07
 
 - Allow PHP 7.2

@@ -2,8 +2,8 @@
 
 namespace Setting\Tests\Unit;
 
-use Setting\Item;
-use Setting\Group;
+use Setting\Models\Group;
+use Setting\Models\Item;
 use Setting\Tests\TestCase;
 
 class SettingTest extends TestCase
@@ -13,7 +13,7 @@ class SettingTest extends TestCase
     {
         $group = factory(Group::class)->create();
 
-        $this->assertDatabaseHas('setting_groups', $group->toArray());
+        $this->assertDatabaseHas('setting_groups', $group->getAttributes());
     }
 
     /** @test */
@@ -33,9 +33,9 @@ class SettingTest extends TestCase
     /** @test */
     public function a_setting_item_can_be_created()
     {
-    	$item = factory(Item::class)->create();
+        $item = factory(Item::class)->create();
 
-        $this->assertDatabaseHas('setting_items', $item->toArray());
+        $this->assertDatabaseHas('setting_items', $item->getAttributes());
     }
 
     /** @test */

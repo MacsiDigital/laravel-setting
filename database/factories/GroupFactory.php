@@ -1,6 +1,6 @@
 <?php
 
-use Setting\Group;
+use Setting\Models\Group;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 

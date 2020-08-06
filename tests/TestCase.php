@@ -2,14 +2,11 @@
 
 namespace Setting\Tests;
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Setting\Providers\SettingServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Setting\Providers\SettingServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
-
     public function setUp() : void
     {
         parent::setUp();
@@ -19,7 +16,6 @@ abstract class TestCase extends Orchestra
         $this->setUpDatabase($this->app);
 
         $this->withFactories(__DIR__.'/../database/factories');
-
     }
 
     /**
@@ -44,8 +40,8 @@ abstract class TestCase extends Orchestra
         $app['config']->set('setting.table_names.groups', 'setting_groups');
         $app['config']->set('setting.table_names.items', 'setting_items');
 
-        $app['config']->set('setting.models.group', '\Setting\Group');
-        $app['config']->set('setting.models.item', '\Setting\Item');
+        $app['config']->set('setting.models.group', '\Setting\Models\Group');
+        $app['config']->set('setting.models.item', '\Setting\Models\Item');
     }
 
     /**
@@ -59,5 +55,4 @@ abstract class TestCase extends Orchestra
 
         (new \CreateSettingTables())->up();
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Setting\Item;
+use Setting\Models\Item;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
