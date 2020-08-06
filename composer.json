@@ -8,6 +8,7 @@
         "configs"
     ],
     "homepage": "https://github.com/macsidigital/laravel-setting",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
