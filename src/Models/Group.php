@@ -7,14 +7,19 @@ use Setting\Contracts\Group as Contract;
 
 class Group extends Model implements Contract
 {
-    protected $table = 'setting_groups';
-
     protected $fillable = [
-        'identifier', 'name', 'description',
+        'identifier', 'name', 'description', 'autoload'
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->setTable(config('setting.table_names.groups'));
+    }
 
     public function items()
     {
-        return $this->hasMany(config('setting.models.item'), 'setting_group_id');
+        return $this->hasMany(config('setting.models.item'), config('setting.foreign_keys.group'));
     }
 }

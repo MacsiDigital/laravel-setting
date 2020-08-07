@@ -42,6 +42,9 @@ abstract class TestCase extends Orchestra
 
         $app['config']->set('setting.models.group', '\Setting\Models\Group');
         $app['config']->set('setting.models.item', '\Setting\Models\Item');
+
+        $app['config']->set('setting.foreign_keys.group', 'setting_group_id');
+        $app['config']->set('setting.foreign_keys.item', 'setting_item_id');
     }
 
     /**

@@ -7,14 +7,19 @@ use Setting\Contracts\Item as Contract;
 
 class Item extends Model implements Contract
 {
-    protected $table = 'setting_items';
-
     protected $fillable = [
-        'name', 'description', 'key', 'value',
+        'name', 'description', 'key', 'value', 'autoload'
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->setTable(config('setting.table_names.items'));
+    }
 
     public function group()
     {
-        return $this->belongsTo(config('setting.models.group'), 'setting_group_id');
+        return $this->belongsTo(config('setting.models.group'), config('setting.foreign_keys.item'));
     }
 }
