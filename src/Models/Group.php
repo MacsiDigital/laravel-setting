@@ -8,7 +8,7 @@ use Setting\Contracts\Group as Contract;
 class Group extends Model implements Contract
 {
     protected $fillable = [
-        'identifier', 'name', 'description', 'autoload'
+        'identifier', 'name', 'description', 'autoload',
     ];
 
     public function __construct(array $attributes = [])

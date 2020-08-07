@@ -8,7 +8,7 @@ use Setting\Contracts\Item as Contract;
 class Item extends Model implements Contract
 {
     protected $fillable = [
-        'name', 'description', 'key', 'value', 'autoload'
+        'name', 'description', 'key', 'value', 'autoload',
     ];
 
     public function __construct(array $attributes = [])
