@@ -53,13 +53,13 @@ class SettingServiceProvider extends ServiceProvider
         $global_migrations = collect((new Filesystem)->files(database_path('/migrations')));
 
         $migrations = [];
-        foreach ((new Filesystem)->files(__DIR__.'/../../database/migrations/stubs') as $migration) {
+        foreach ((new Filesystem)->files(__DIR__.'/../../database/migrations') as $migration) {
             if (! $global_migrations->contains(function ($value, $key) use ($migration) {
                 if (Str::contains($value->getRelativePathname(), $migration->getFilenameWithoutExtension())) {
                     return true;
                 }
             })) {
-                $migrations[__DIR__.'/../../database/migrations/stubs/'.$migration->getRelativePathname()] = database_path('migrations/'.date('Y_m_d_His').'_'.$migration->getFilenameWithoutExtension());
+                $migrations[__DIR__.'/../../database/migrations/'.$migration->getRelativePathname()] = database_path('migrations/'.date('Y_m_d_His').'_'.$migration->getFilenameWithoutExtension());
             }
         }
 

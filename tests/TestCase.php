@@ -54,7 +54,7 @@ abstract class TestCase extends Orchestra
      */
     protected function setUpDatabase($app)
     {
-        include_once __DIR__.'/../database/migrations/stubs/create_setting_tables.php.stub';
+        include_once __DIR__ . '/../database/migrations/create_setting_tables.php.stub';
 
         (new \CreateSettingTables())->up();
     }
