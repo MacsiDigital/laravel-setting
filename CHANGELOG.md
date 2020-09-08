@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-setting` will be documented in this file
 
+## 1.1.0 - 2020-09-08
+
+- Laravel 8.0
+
 ## 1.0.7 - 2020-04-07
 
 - Models into Models folder

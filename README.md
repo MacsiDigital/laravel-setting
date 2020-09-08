@@ -5,12 +5,16 @@
 ![Header Image](https://github.com/MacsiDigital/repo-design/raw/master/laravel-setting/header.png)
 
 <p align="center">
- <a href="https://github.com/MacsiDigital/laravel-setting/actions?query=workflow%3Atests"><img src="https://github.com/MacsiDigital/laravel-setting/workflows/Run%20tests/badge.svg" style="max-width:100%;"></a>
- <a href="https://packagist.org/packages/macsidigital/laravel-setting"><img src="https://img.shields.io/packagist/v/macsidigital/laravel-setting.svg?style=flat-square"/></a>
- <a href="https://packagist.org/packages/macsidigital/laravel-setting"><img src="https://img.shields.io/packagist/dt/macsidigital/laravel-setting.svg?style=flat-square"/></a>
+ <a href="https://github.com/MacsiDigital/laravel-setting/actions?query=workflow%3Atests"><img src="https://github.com/MacsiDigital/laravel-setting/workflows/Run%20tests/badge.svg" style="max-width:100%;" alt="tests badge"></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-setting"><img src="https://img.shields.io/packagist/v/macsidigital/laravel-setting.svg?style=flat-square" alt="version badge"/></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-setting"><img src="https://img.shields.io/packagist/dt/macsidigital/laravel-setting.svg?style=flat-square" alt="downloads badge"/></a>
 </p>
 
-A setting package to save settings to teh db and access them through config.
+A setting package to save settings to the db and access them through config.
+
+## Support us
+
+We invest a lot in creating [open source packages](https://macsidigital.co.uk/open-source), and would be grateful for a [sponsor](https://github.com/sponsors/MacsiDigital) if you make money from your product that uses them.
 
 ## Installation
 
@@ -42,13 +46,13 @@ $item = Item::make(['key' => 'mailchimp', 'name' => 'Mailchimp Key', 'descriptio
 $group->items()->save($item);
 ```
 
-As we utilise Eloquent you can use any Eloquent functions.  For exampledo the following to retreive a setting group
+As we utilise Eloquent you can use any Eloquent functions.  For example, do the following to retrieve a setting group.
 
 ``` php
 Group::where('identifier', 'membership')->first();
 ```
 
-And we are linked to the items in the normal relationship way
+We are linked to the items in the normal relationship way
 
 ``` php
 foreach(Group::where('identifier', 'membership')->first()->items){
@@ -56,9 +60,9 @@ foreach(Group::where('identifier', 'membership')->first()->items){
 }
 ```
 
-## Autoloading
+## Auto loading
 
-There is also an autoload field which if set will automatically load the settings into config
+There's an autoload field, which if set will automatically load the settings into config
 
 ``` php
 $group = Group::create([
@@ -74,21 +78,30 @@ $group->items()->save($item);
 config('test.mailchimp.api');
 ```
 
-These will be automatically loaded when the Setting Service Provider is run.
+This will be automatically loaded when the Setting Service Provider is booted.
 
-### Testing
+## Testing
 
 ``` bash
-phpunit
+composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security
+
+If you discover any security-related issues, please email [info@macsi.co.uk](mailto:info@masi.co.uk) instead of using the issue tracker.
+
 ## Credits
 
-- [Colin Hall](https://github.com/colinhall17)
+- [Colin Hall](https://github.com/ColinHall)
+- [MacsiDigital](https://github.com/MacsiDigital)
 - [All Contributors](../../contributors)
 
 ## License
