@@ -11,6 +11,7 @@ use Setting\Contracts\Group as GroupContract;
 use Setting\Contracts\Item as ItemContract;
 use Setting\Facades\Group;
 use Setting\Facades\Item;
+use Setting\Package;
 
 class SettingServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,8 @@ class SettingServiceProvider extends ServiceProvider
     {
         $config = $this->app->config['setting.models'];
 
+        $this->app->bind('setting', Package::class);
+        
         $this->app->bind('setting.group', GroupContract::class);
         $this->app->bind('setting.item', ItemContract::class);
 
